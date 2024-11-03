@@ -1,0 +1,4 @@
+@import './tailwind/index.css';
+@import './components/_loading.css';
+@import './components/_button.css';
+@import './components/_slide.css';

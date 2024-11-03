@@ -1,0 +1,27 @@
+button {
+  @apply transition-all duration-150 ease-in-out;
+}
+
+button.button-primary {
+  @apply bg-yellow-2;
+}
+
+button.button-secondary {
+  @apply bg-dark-1 text-light-1;
+}
+
+button.button-tertiary {
+  @apply hover:bg-dark-2 bg-transparent text-inherit;
+}
+
+button.button-green {
+  @apply bg-green-2;
+}
+
+button.button-rounded {
+  @apply rounded-full;
+}
+
+button.button-red {
+  @apply bg-red-1;
+}

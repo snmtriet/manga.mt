@@ -1,0 +1,17 @@
+.swiper-pagination-progressbar
+  .swiper-pagination-progressbar-fill.custom-progressbar-fill {
+  @apply bg-red-1 rounded-md;
+}
+
+.swiper-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal {
+  @apply bg-dark-1 bottom-0 top-[unset] mb-1 h-0.5;
+}
+
+.swiper-pagination-bullets .swiper-pagination-bullet {
+  @apply bg-dark-1 !m-0.5 h-0.5 w-10 rounded-full opacity-100;
+}
+
+.swiper-pagination-bullets
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply bg-red-1;
+}

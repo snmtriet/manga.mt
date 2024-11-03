@@ -1,0 +1,113 @@
+.loading-center {
+  @apply fixed inset-0 flex flex-1 flex-col items-center justify-center;
+}
+
+.gif-loading {
+  @apply w-12 object-cover;
+}
+
+.loading-default {
+  @apply flex h-full items-center justify-center;
+}
+
+.preloader__container {
+  background: #141419;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+#preloader {
+  transition: opacity 0.3s ease-in-out;
+}
+
+#preloader.preloader__loaded {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.preloader__item {
+  box-sizing: border-box;
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  position: relative;
+}
+
+.preloader__spinner {
+  box-sizing: content-box;
+  transform: translateZ(0) rotate(0);
+  border: 3px solid #ff5c5c;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  animation: dice-spinner 950ms infinite linear;
+}
+
+.loader-spinner {
+  animation: animateSpinner 2s linear infinite;
+}
+
+.loader-spinner__path {
+  stroke-linecap: butt;
+  animation: animateSpinnerPath 1.5s ease-in-out infinite;
+}
+
+@media screen and (min-width: 768px) {
+  .preloader__item {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+  }
+
+  .preloader__spinner {
+    border: 5px solid #ff5c5c;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    top: -5px;
+    left: -5px;
+  }
+}
+
+@keyframes animateSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animateSpinnerPath {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -40;
+  }
+
+  to {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes dice-spinner {
+  100% {
+    -webkit-transform: translateZ(0) rotate(360deg);
+    transform: translateZ(0) rotate(360deg);
+  }
+}
