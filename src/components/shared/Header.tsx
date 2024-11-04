@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className="border-b-light-grey-3 sticky top-0 z-50 border-b backdrop-blur-lg">
+    <div className="sticky top-0 z-50 border-b border-b-light-grey-3 backdrop-blur-lg">
       <div className="mx-auto flex w-full max-w-screen-xxl items-center justify-between px-2 py-2">
         <div className="flex items-center">
           <Link to="/">
@@ -16,11 +16,21 @@ const Header = () => {
           </Link>
           <nav className="ml-10 hidden md:block">
             <ul className="flex items-center gap-xl">
-              <Text>Types</Text>
-              <Text>Genres</Text>
-              <Text>Newest</Text>
-              <Text>Updated</Text>
-              <Text>Added</Text>
+              <Text className="cursor-pointer text-light-1 hover:text-light">
+                Types
+              </Text>
+              <Text className="cursor-pointer text-light-1 hover:text-light">
+                Genres
+              </Text>
+              <Text className="cursor-pointer text-light-1 hover:text-light">
+                Newest
+              </Text>
+              <Text className="cursor-pointer text-light-1 hover:text-light">
+                Updated
+              </Text>
+              <Text className="cursor-pointer text-light-1 hover:text-light">
+                Added
+              </Text>
             </ul>
           </nav>
         </div>

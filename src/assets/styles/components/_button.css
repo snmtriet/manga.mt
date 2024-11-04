@@ -7,11 +7,11 @@ button.button-primary {
 }
 
 button.button-secondary {
-  @apply bg-dark-1 text-light-1;
+  @apply bg-dark-1 text-light-1 hover:bg-dark-2;
 }
 
 button.button-tertiary {
-  @apply hover:bg-dark-2 bg-transparent text-inherit;
+  @apply bg-transparent text-inherit hover:bg-dark-2;
 }
 
 button.button-green {
@@ -23,5 +23,5 @@ button.button-rounded {
 }
 
 button.button-red {
-  @apply bg-red-1;
+  @apply bg-red-1 hover:bg-red-2;
 }

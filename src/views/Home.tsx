@@ -1,13 +1,8 @@
-import { IoIosArrowBack } from 'react-icons/io'
-import { IoRocket } from 'react-icons/io5'
 import { BannerSlide, MangaCard, PosterSlide } from '@/components/shared'
 import { Button, Heading, Section, Text } from '@/components/ui'
+import { IoIosArrowBack } from 'react-icons/io'
 
 const Home = () => {
-  function onGoTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   return (
     <div>
       <Section className="mt-4">
@@ -117,13 +112,6 @@ const Home = () => {
         />
         <div className="new-release-pagination flex items-center justify-center"></div>
       </Section>
-      <div
-        className="mt-10 flex cursor-pointer flex-col items-center justify-center"
-        onClick={onGoTop}
-      >
-        <IoRocket size={24} className="text-red-2" />
-        <Text>Go to surface</Text>
-      </div>
     </div>
   )
 }

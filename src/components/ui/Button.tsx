@@ -1,5 +1,5 @@
 import { cn } from '@/utils'
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
 
 type Props = {
   children: ReactNode
@@ -10,7 +10,7 @@ type Props = {
   justifyContent?: 'start' | 'center' | 'end'
   variant?: 'primary' | 'secondary' | 'tertiary' | 'green' | 'rounded' | 'red'
   square?: boolean
-}
+} & HTMLAttributes<HTMLButtonElement>
 
 const Button = (props: Props) => {
   const {
@@ -22,6 +22,7 @@ const Button = (props: Props) => {
     after,
     variant = 'primary',
     square,
+    ...rest
   } = props
 
   const sizeClass = `text-${size}`
@@ -40,6 +41,7 @@ const Button = (props: Props) => {
         btnClass,
         className,
       )}
+      {...rest}
     >
       {before}
       {children}
