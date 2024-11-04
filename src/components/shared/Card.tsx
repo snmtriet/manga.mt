@@ -12,7 +12,7 @@ const Card = (props: Props) => {
   return (
     <div
       className={cn(
-        'overflow-hidden rounded border-light-grey-3/10 bg-dark-3 p-2 shadow-md',
+        'overflow-hidden rounded border-light-grey-3/10 bg-dark-3 p-2 shadow-md transition-all duration-150',
         { border: border },
         className,
       )}

@@ -169,12 +169,12 @@ const Manga = () => {
               </Button>
             </div>
             <Card className="rounded-tl-none border-t-4 border-t-red-1 p-0">
-              <div className="flex items-center justify-between p-2">
-                <div>Choose Language</div>
+              <div className="flex flex-col items-start justify-between gap-md p-2 sm:flex-row sm:items-center">
+                <Button variant="secondary">Choose Language</Button>
                 <div>
                   <Input
                     type="number"
-                    placeholder="Chapter number..."
+                    placeholder="Chapter number"
                     after={<IoSearchSharp size={20} />}
                     onChange={(value) => debounced(value)}
                   />
@@ -253,7 +253,7 @@ const Manga = () => {
                 {Array.from({ length: 10 }).map((_, index) => (
                   <div
                     key={index}
-                    className="overflow-hidden p-2 odd:bg-dark-4 even:bg-dark-5"
+                    className="cursor-pointer overflow-hidden p-2 transition-all duration-150 odd:bg-dark-4 even:bg-dark-5 hover:bg-dark-6"
                   >
                     <div className="flex items-center justify-between">
                       <div className="h-full w-full max-w-12">

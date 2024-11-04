@@ -69,6 +69,7 @@ export default {
       colors: {
         dark: '#202023',
         light: '#fff',
+        mask: '#000c',
         'yellow-1': '#FFCF42',
         'yellow-2': '#E9B10E',
         'yellow-3': '#CC6C31',

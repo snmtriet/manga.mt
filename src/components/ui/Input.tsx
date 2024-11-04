@@ -16,21 +16,22 @@ const Input = (props: Props) => {
         'relative flex items-center rounded-md border border-light-grey-3 px-2 text-md',
         {
           'rounded-full': variant === 'rounded',
+          'pl-2 pr-1': before,
+          'pl-1 pr-2': after,
         },
         className,
       )}
     >
-      {before && (
-        <div className="absolute left-2 top-1/2 -translate-y-1/2">{before}</div>
-      )}
+      {before}
       <input
-        className="h-[36px] w-full bg-transparent outline-none"
+        className={cn('h-[36px] w-full bg-transparent outline-none', {
+          'ml-1': before,
+          'mr-1': after,
+        })}
         onChange={(e) => onChange?.(e.target.value)}
         {...rest}
       />
-      {after && (
-        <div className="absolute right-2 top-1/2 -translate-y-1/2">{after}</div>
-      )}
+      {after}
     </div>
   )
 }
