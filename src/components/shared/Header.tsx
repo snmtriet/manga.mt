@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { HiOutlineBars3 } from 'react-icons/hi2'
 import { IoSearchSharp } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
-import { Button, Input, Text } from '../ui'
+import { Button, Heading, Input, Text } from '../ui'
 
 const Header = () => {
   const [openSearch, setOpenSearch] = useState(false)
@@ -21,12 +21,13 @@ const Header = () => {
       <div className="sticky top-0 z-50 border-b border-b-light-grey-3 backdrop-blur-lg">
         <div className="mx-auto flex w-full max-w-screen-xxl items-center justify-between px-2 py-2">
           <div className="flex items-center">
-            <Link to="/">
-              <img
-                src="https://mangafire.vercel.app/logo.png"
-                alt="logo"
-                className="max-w-20"
-              />
+            <Link to="/" className="flex items-center">
+              <Heading as="h2" bold>
+                Manga
+              </Heading>
+              <Text size="sm" bold className="text-red-2">
+                MT
+              </Text>
             </Link>
             <nav className="ml-10 hidden md:block">
               <ul className="flex items-center gap-xl">
@@ -89,7 +90,7 @@ const Header = () => {
       </div>
       <div
         className={cn(
-          'bg-mask fixed inset-0 z-0 h-full w-full opacity-0 transition-all duration-300 ease-in-out',
+          'fixed inset-0 z-0 h-full w-full bg-mask opacity-0 transition-all duration-300 ease-in-out',
           {
             'z-10 opacity-100': openSearch,
           },

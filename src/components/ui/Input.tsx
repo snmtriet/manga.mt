@@ -16,8 +16,6 @@ const Input = (props: Props) => {
         'relative flex items-center rounded-md border border-light-grey-3 px-2 text-md',
         {
           'rounded-full': variant === 'rounded',
-          'pl-2 pr-1': before,
-          'pl-1 pr-2': after,
         },
         className,
       )}
