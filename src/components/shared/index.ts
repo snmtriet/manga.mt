@@ -4,5 +4,14 @@ import Footer from './Footer'
 import BannerSlide from './BannerSlide'
 import PosterSlide from './PosterSlide'
 import MangaCard from './MangaCard'
+import ReadMenuAside from './ReadMenuAside'
 
-export { Loading, Header, Footer, BannerSlide, PosterSlide, MangaCard }
+export {
+  Loading,
+  Header,
+  Footer,
+  BannerSlide,
+  PosterSlide,
+  MangaCard,
+  ReadMenuAside,
+}

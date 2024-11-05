@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import { FaPlay, FaStar } from 'react-icons/fa'
 import { GoBookmarkFill } from 'react-icons/go'
 import { IoEye, IoSearchSharp } from 'react-icons/io5'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useDebounceCallback } from 'usehooks-ts'
 
 enum ReadBy {
@@ -185,7 +185,8 @@ const Manga = () => {
                 ref={listRef}
               >
                 {Array.from({ length: 500 }).map((_, index) => (
-                  <div
+                  <Link
+                    to={`/read/sono-bisque-doll-wa-koi-wo-suruu/en/${index + 1}`}
                     key={index}
                     className={cn(
                       'group cursor-pointer bg-dark-4 p-2 hover:bg-dark-3',
@@ -229,7 +230,7 @@ const Manga = () => {
                         Jan 01, 2022
                       </Text>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </Card>

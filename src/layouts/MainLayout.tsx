@@ -8,7 +8,7 @@ const MainLayout = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
   return (
-    <div>
+    <main>
       <Header />
       <div className="relative mx-auto min-h-screen max-w-screen-xxl px-2 py-4">
         <Views />
@@ -21,7 +21,7 @@ const MainLayout = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </main>
   )
 }
 

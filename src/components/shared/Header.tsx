@@ -4,8 +4,17 @@ import { HiOutlineBars3 } from 'react-icons/hi2'
 import { IoSearchSharp } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import { Button, Heading, Input, Text } from '../ui'
+import { BsFillGridFill } from 'react-icons/bs'
+import { setReadMenuOpen, useAppDispatch, useAppSelector } from '@/store'
 
-const Header = () => {
+type Props = {
+  isReadLayout?: boolean
+}
+
+const Header = (props: Props) => {
+  const { isReadLayout } = props
+  const dispatch = useAppDispatch()
+  const { readMenuOpen } = useAppSelector((state) => state.setting)
   const [openSearch, setOpenSearch] = useState(false)
 
   function handleOpenSearch() {
@@ -16,10 +25,21 @@ const Header = () => {
     setOpenSearch(false)
   }
 
+  function toggleReadMenu() {
+    dispatch(setReadMenuOpen({ open: !readMenuOpen }))
+  }
+
   return (
     <>
       <div className="sticky top-0 z-50 border-b border-b-light-grey-3 backdrop-blur-lg">
-        <div className="mx-auto flex w-full max-w-screen-xxl items-center justify-between px-2 py-2">
+        <div
+          className={cn(
+            'mx-auto flex w-full items-center justify-between px-2 py-2',
+            {
+              'max-w-screen-xxl': !isReadLayout,
+            },
+          )}
+        >
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <Heading as="h2" bold>
@@ -63,9 +83,34 @@ const Header = () => {
               <IoSearchSharp size={24} />
             </Button>
             <Button variant="red">Login</Button>
-            <Button variant="secondary" square className="ml-md flex md:hidden">
-              <HiOutlineBars3 size={24} />
+            <Button
+              variant="secondary"
+              square
+              className="ml-md flex border border-red-1 md:hidden"
+            >
+              <HiOutlineBars3 size={24} className="text-red-1" />
             </Button>
+            {isReadLayout && (
+              <Button
+                variant="secondary"
+                square
+                className={cn(
+                  'ml-md flex items-center gap-md border border-red-1',
+                  {
+                    'border-red-2': readMenuOpen,
+                  },
+                )}
+                onClick={toggleReadMenu}
+              >
+                <BsFillGridFill
+                  size={24}
+                  className={cn('text-red-1', {
+                    'text-red-2': readMenuOpen,
+                  })}
+                />
+                <Text bold>MENU</Text>
+              </Button>
+            )}
           </div>
         </div>
         <div

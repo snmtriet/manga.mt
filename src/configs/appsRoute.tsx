@@ -12,6 +12,11 @@ const appsRoute: Routes = [
     path: '/manga/:slug',
     component: lazy(() => import('@/views/Manga')),
   },
+  {
+    key: 'app.read',
+    path: '/read/:slug/:lang/:chapter',
+    component: lazy(() => import('@/views/Read')),
+  },
 ]
 
 export default appsRoute

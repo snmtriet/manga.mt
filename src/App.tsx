@@ -1,12 +1,30 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useMemo } from 'react'
 import { cn } from './utils'
 import { useAppSelector } from './store'
 import { Loading } from './components/shared'
+import { useLocation } from 'react-router-dom'
+import {
+  LAYOUT_TYPE_DEFAULT,
+  LAYOUT_TYPE_READ,
+} from './constants/theme.constant'
 
-const MainLayoutLazy = lazy(() => import('./layouts/MainLayout'))
+const layouts = {
+  default: lazy(() => import('./layouts/MainLayout')),
+  read: lazy(() => import('./layouts/ReadLayout')),
+}
 
 function App() {
+  const { pathname } = useLocation()
   const { theme } = useAppSelector((state) => state.setting)
+
+  const AppLayout = useMemo(() => {
+    if (pathname.includes(LAYOUT_TYPE_READ)) {
+      return layouts[LAYOUT_TYPE_READ]
+    } else {
+      return layouts[LAYOUT_TYPE_DEFAULT]
+    }
+  }, [pathname])
+
   return (
     <Suspense
       fallback={
@@ -20,7 +38,7 @@ function App() {
         </div>
       }
     >
-      <MainLayoutLazy />
+      <AppLayout />
     </Suspense>
   )
 }
